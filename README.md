@@ -1,16 +1,23 @@
-# task_j
+# Repository Manager
 
-A new Flutter project.
+## General Architecture of the Application
 
-## Getting Started
+The Repository Manager application is built using Flutter, leveraging the Provider package for state management and Shared Preferences for local data storage. The application features a user-friendly interface that allows users to browse trending repositories, mark them as favorites, and view their list of favorite repositories.
 
-This project is a starting point for a Flutter application.
+## Reasoning Behind Main Technical Choices
 
-A few resources to get you started if this is your first Flutter project:
+- **Provider**: This state management solution simplifies data sharing between widgets and reactivity, keeping the UI in sync with underlying data changes.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Shared Preferences**: For local storage of favorite repositories, Shared Preferences offers a simple key-value storage solution, making it easy to persist data without a complex setup.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Cached Network Images**: Implementing image caching with the `cached_network_image` package helps improve performance and reduce network usage by caching avatar images.
+
+## Features Not Implemented
+
+While the application is functional, there are several features that were not implemented or could be improved for a production version:
+
+- Search Functionality.
+- Error Handling.
+- Offline Support.
+
+
