@@ -1,4 +1,3 @@
-# Repository Manager
 
 ## General Architecture of the Application
 
