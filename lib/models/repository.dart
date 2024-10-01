@@ -9,11 +9,14 @@ class RepositoryResponse {
       RepositoryResponse(
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
       );
+  Map<String, dynamic> toJson() => {
+    "items": List<dynamic>.from(items.map((x) => x.toJson())),
+  };
 }
 
 class Item {
   String name;
-
+  int id ;
   Owner owner;
   String htmlUrl;
   String? description;
@@ -24,7 +27,11 @@ class Item {
   String? language;
   int forks;
 
+  bool isFavorite;
+
+
   Item({
+    required this.id,
     required this.name,
     required this.owner,
     required this.htmlUrl,
@@ -33,9 +40,12 @@ class Item {
     required this.stargazersCount,
     required this.language,
     required this.forks,
+    this.isFavorite = false,
+
   });
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
+        id: json["id"],
         name: json["name"],
         owner: Owner.fromJson(json["owner"]),
         htmlUrl: json["html_url"],
@@ -44,7 +54,20 @@ class Item {
         stargazersCount: json["stargazers_count"],
         language: json["language"],
         forks: json["forks"],
+        isFavorite: false,
       );
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "owner": owner.toJson(),
+    "html_url": htmlUrl,
+    "description": description,
+    "created_at": createdAt.toIso8601String(),
+    "stargazers_count": stargazersCount,
+    "language": language,
+    "forks": forks,
+    "isFavorite": isFavorite, // Add this to JSON output
+  };
 }
 
 class Owner {
@@ -59,4 +82,9 @@ class Owner {
         login: json["login"],
         avatarUrl: json["avatar_url"],
       );
+  Map<String, dynamic> toJson() => {
+    "login": login,
+    "avatar_url": avatarUrl,
+  };
+
 }
