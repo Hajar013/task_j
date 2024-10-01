@@ -37,6 +37,7 @@ dependencies:
   shared_preferences: ^2.2.3
 
   url_launcher: ^6.3.0
+  cached_network_image: ^3.2.3
 
 
 

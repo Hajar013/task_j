@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -107,7 +108,8 @@ class _RepositoryListScreenState extends State<RepositoryListScreen> {
                     return ListTile(
                       leading: CircleAvatar(
                         backgroundImage: repository.owner.avatarUrl.isNotEmpty
-                            ? NetworkImage(repository.owner.avatarUrl)
+                            ? CachedNetworkImageProvider(
+                            repository.owner.avatarUrl) as ImageProvider
                             : AssetImage(noAvatarUrl),
                       ),
                       title: Text('${repository.owner.login} / ${repository
