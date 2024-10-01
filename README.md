@@ -14,8 +14,8 @@ The Repository Manager application is built using Flutter, leveraging the Provid
 
 ## Features Not Implemented
 
-- Search Functionality.
-- Error Handling.
+- Search Functionality:implement a search bar that filters the displayed repositories based on user input.
+- Error Handling:including user-friendly error messages.
 - Offline Support.
 
 
